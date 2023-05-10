@@ -37,7 +37,7 @@ export default function Home() {
   ]);
 
   return (
-    <div className="w-full  h-full bg-neutral-50 dark:bg-neutral-800">
+    <div className="w-full  h-full bg-neutral-50 dark:bg-neutral-800 font-sans">
       <ContainerMaxWidth bg="" spacing="p-8"   item={<div></div>}/>
       <ContainerMaxWidth bg="bg-normalmodeblue-800 dark:bg-darkmodeblue-400" spacing="p-8 mb-16"   item={<div></div>}/>
       
