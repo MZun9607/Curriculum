@@ -1,124 +1,74 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import ContainerInformation from "@src/components/containers/ContainerInformation";
+import ContainerMaxWidth from "@src/components/containers/ContainerMaxWidth";
+import { useState } from "react";
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [profile, setProfile] = useState([
+    {subtitle: '', link:'', description: 'Egresado de la carrera de ingeniería de sistemas, responsable, con facilidad de aprendizaje, adaptación, resolución de problemas y capacidad de trabajo en equipo, con muchas ganas de desarrollarme profesionalmente.' }
+  ]);
+
+  const [skills, setSkills] = useState([
+    {subtitle: '', link:'', description: 'C++ / C# / .NET*HTML / CSS / JAVASCRIPT*REACT / NODEJS*COBOL*JAVA*ANDROID STUDIO*GIT*MICROSOFT EXCEL (VBA)*SQLSERVER / ORACLE*METODOLOGÍAS AGILES*GHERKIN*SOAPUI / POSTMAN*AZURE / CLOUD COMPUTING' }
+  ]);
+
+  const [languages, setLanguages] = useState([
+    {subtitle: '', link:'', description: 'Español (Nativo)*Inglés (Intermedio)' }
+  ]);
+
+  const [experiences, setExperiences] = useState([
+    {subtitle: 'Asistente en el área de facturación.', link:'', description: "LICEX PERU*2015 - 2022" },
+    {subtitle: 'Programador.', link:'', description: "IT&B Consulting*07/2021 - 09/2021" }
+  ]);
+
+  const [education, setEducation] = useState([
+    {subtitle: 'UNIVERSIDAD PRIVADA DEL NORTE.', link:'', description: "Ingeniería de sistemas computacionales*2016 – 2020*Sede: UPN – Lima Centro*Situación: Egresado*Calificación media: Notable" }
+  ]);
+
+  const [contact, setContact] = useState([
+    {subtitle: '', link:'', description: "Teléfono: 928892316*e-mail: mzb9607@gmail.com" }
+  ]);
+
+  const [projects, setProjects] = useState([
+    {subtitle: 'LICEX', link:'https://zingy-basbousa-a31bde.netlify.app/', description: "Single Page usando ReactJS y Tailwind."},
+    {subtitle: 'KITTENS', link:'https://zingy-basbousa-a31bde.netlify.app/', description: "Aplicación web usando ReactJS y Tailwind."},
+    {subtitle: 'BALL#', link:'https://play.google.com/store/apps/details?id=com.Deizoforia.Ball', description: "Videojuego educativo desarrollado en Unity3D."},
+    {subtitle: 'Censo Arbóreo', link:'https://play.google.com/store/apps/details?id=com.CensoArboreoApp.ProyectoCensoArboreo', description: "Aplicación desarrollada en Android Studio"},
+  ]);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="w-full  h-full bg-neutral-50 dark:bg-neutral-800">
+      <ContainerMaxWidth bg="" spacing="p-8"   item={<div></div>}/>
+      <ContainerMaxWidth bg="bg-normalmodeblue-800 dark:bg-darkmodeblue-400" spacing="p-8 mb-16"   item={<div></div>}/>
+      
+      <ContainerMaxWidth item={
+        <>
+          <h1 className="text-4xl md:text-6xl my-4 text-center font-Poppins text-normalmodeblue-700 dark:text-neutral-100">
+            MAURICIO ZÚÑIGA BACA
+          </h1>
+          <h1 className="text-2xl my-4 text-center text-normalmodeblue-600 dark:text-darkmodeblue-300">
+            Bachiller en ingeniería de sistemas computacionales
+          </h1>
+        </>
+      }/>
+      <ContainerMaxWidth item={<div className="bg-normalmodeblue-800 dark:bg-neutral-50  py-1 my-4"></div>}/>
+      <ContainerMaxWidth item={
+        <div className="px-2 mx-8 grid sm:grid-cols-2 gap-x-6 gap-y-0">
+          <div >
+            <ContainerInformation title="PERFIL PERSONAL" info={profile}/>
+            <ContainerInformation title="FORMACIÓN" info={education}/>
+            <ContainerInformation title="CONOCIMIENTOS" info={skills}/>
+            
+          </div>
+          <div >
+            <ContainerInformation title="EXPERIENCIA LABORAL" info={experiences} />
+            <ContainerInformation title="IDIOMAS" info={languages}/>
+            <ContainerInformation title="PROJECTOS" info={projects}/>
+            <ContainerInformation title="DATOS DE CONTACTO" info={contact}/>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      }/>
+      <ContainerMaxWidth bg="bg-normalmodeblue-800 dark:bg-darkmodeblue-400" spacing="mt-2 p-6"   item={<div></div>}/>
+    </div>
   )
 }
