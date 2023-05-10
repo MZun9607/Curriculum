@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'Poppins': ['"Poppins"']
+      },
       colors: {
         'normalmodeblue': {
           50: "#E0EEFF",
