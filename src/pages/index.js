@@ -31,7 +31,7 @@ export default function Home() {
 
   const [projects, setProjects] = useState([
     {subtitle: 'LICEX', link:'https://zingy-basbousa-a31bde.netlify.app/', description: "Single Page usando ReactJS y Tailwind."},
-    {subtitle: 'KITTENS', link:'https://zingy-basbousa-a31bde.netlify.app/', description: "Aplicación web usando ReactJS y Tailwind."},
+    {subtitle: 'KITTENS', link:'https://stately-cassata-351d79.netlify.app/', description: "Aplicación web usando ReactJS y Tailwind."},
     {subtitle: 'BALL#', link:'https://play.google.com/store/apps/details?id=com.Deizoforia.Ball', description: "Videojuego educativo desarrollado en Unity3D."},
     {subtitle: 'Censo Arbóreo', link:'https://play.google.com/store/apps/details?id=com.CensoArboreoApp.ProyectoCensoArboreo', description: "Aplicación desarrollada en Android Studio"},
   ]);
