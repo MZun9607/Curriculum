@@ -63,7 +63,7 @@ export default function Home() {
           <div >
             <ContainerInformation title="EXPERIENCIA LABORAL" info={experiences} />
             <ContainerInformation title="IDIOMAS" info={languages}/>
-            <ContainerInformation title="PROJECTOS" info={projects}/>
+            <ContainerInformation title="PROYECTOS" info={projects}/>
             <ContainerInformation title="DATOS DE CONTACTO" info={contact}/>
           </div>
         </div>
