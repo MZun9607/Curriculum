@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   async function getCVData(){
-    const res = await fetch(process.env.API_BASE + process.env.API_CURRICULUM_DATA);
+    const res = await fetch("https://main--dancing-meringue-eb2899.netlify.app/api/curriculumdata");
     const data = await res.json();
     setProfile(data[0]["PERFIL PERSONAL"]);
     setSkills(data[0]["CONOCIMIENTOS"]);
