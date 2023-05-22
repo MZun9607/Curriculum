@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 
 export default function Home() {
+
+
   const [profile, setProfile] = useState([]);
 
   const [skills, setSkills] = useState([]);
@@ -23,7 +25,7 @@ export default function Home() {
   }, []);
 
   async function getCVData(){
-    const res = await fetch('http://localhost:3000/api/curriculumdata');
+    const res = await fetch(process.env.API_BASE + process.env.API_CURRICULUM_DATA);
     const data = await res.json();
     setProfile(data[0]["PERFIL PERSONAL"]);
     setSkills(data[0]["CONOCIMIENTOS"]);
