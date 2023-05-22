@@ -1,4 +1,11 @@
 import React from "react"
+import { CSSTransition, SwitchTransition, TransitionGroup } from 'react-transition-group';
+
+
+
+
+
+
 
 export default function ContainerInformation( props ) {
     
@@ -31,16 +38,22 @@ export default function ContainerInformation( props ) {
                 {props.title}
             </h1>
             <div className="bg-normalmodeblue-600 mx-auto sm:mx-2 w-32 sm:w-16 py-0.5 px-2 mt-1 mb-2"></div>
-            {props.info.map((info, key) => (
-                <React.Fragment key={key}>                    
-                    {existInfo(info.subtitle, info.link)}
-                    <p className="px-2 my-0.5 font-Poppins text-neutral-800 dark:text-neutral-50 text-center sm:text-justify mb-2">
-                        {info.description.split('*').map((item, i) => {
-                            return <span key={i}>{item}<br/></span>
-                        })}
-                    </p>
-                </React.Fragment>
-            ))}
+            <TransitionGroup>
+                {props.info.map((info, key) => (
+                    <CSSTransition  classNames="fade"  key={key} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}>
+                    <React.Fragment key={key}>  
+                        <div className="origin-top"> 
+                            {existInfo(info.subtitle, info.link)}
+                            <p className="px-2 my-0.5 font-Poppins text-neutral-800 dark:text-neutral-50 text-center sm:text-justify mb-2">
+                                {info.description.split('*').map((item, i) => {
+                                    return <span key={i}>{item}<br/></span>
+                                })}
+                            </p>
+                        </div>                  
+                    </React.Fragment>
+                    </CSSTransition>
+                ))}
+            </TransitionGroup>
         </div>
     )
     

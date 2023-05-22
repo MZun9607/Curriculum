@@ -1,10 +1,10 @@
 export default function ContainerMaxWidth( props ) {
     let divClassName = "flex w-full items-center justify-center "
 
-    if (props.bg!= null || props.bg !="") {
+    if (!(props.bg== null || props.bg =="")) {
         divClassName = divClassName + props.bg + " "
     }
-    if (props.bg!= null || props.spacing !="") {
+    if (!(props.bg== null || props.spacing =="")) {
         divClassName = divClassName + props.spacing + " "
     }
 
